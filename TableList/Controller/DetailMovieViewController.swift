@@ -9,10 +9,19 @@ import UIKit
 
 class DetailMovieViewController: UIViewController {
 
+    @IBOutlet weak var moviePosterLabel: UIImageView!
+    @IBOutlet weak var movieTitleAndYear: UILabel!
+    var film: Film!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if film != nil {
+            moviePosterLabel.image = UIImage(named: film.poster)
+            movieTitleAndYear.text = film.movie + " - " + film.year
+            movieTitleAndYear.numberOfLines = 0
+        }
+        
     }
     
 
